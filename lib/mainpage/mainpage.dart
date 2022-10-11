@@ -49,9 +49,12 @@ class _MainPageState extends State<MainPage> {
             ),
             child: Container(
               height: 25,
-              child: Image.asset(
-                'imag/main_logo.png',
-                fit: BoxFit.fill,
+              child: InkWell(
+                onTap: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));},
+                child: Image.asset(
+                  'imag/main_logo.png',
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ),
@@ -262,7 +265,7 @@ class _MainPageState extends State<MainPage> {
                             children: [
                               Text(
                                 'Details',
-                                style: TextStyle(color: Colors.grey),
+                                style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 3,color: Colors.grey),
                               ),
                               Icon(
                                 Icons.arrow_right,
@@ -525,7 +528,7 @@ class _MainPageState extends State<MainPage> {
                                 children: [
                                   Text(
                                     'Details',
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 3,color: Colors.white),
                                   ),
                                   Icon(
                                     Icons.arrow_right,
@@ -793,7 +796,7 @@ class _MainPageState extends State<MainPage> {
                             children: [
                               Text(
                                 'Details',
-                                style: TextStyle(color: Colors.grey[700]),
+                                style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 3,color: Colors.grey[700]),
                               ),
                               Icon(
                                 Icons.arrow_right,
@@ -1005,7 +1008,7 @@ class _MainPageState extends State<MainPage> {
                                 children: [
                                   Text(
                                     'Details',
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 3,color: Colors.white),
                                   ),
                                   Icon(
                                     Icons.arrow_right,
@@ -1181,7 +1184,7 @@ class _MainPageState extends State<MainPage> {
                                     ),
                                     Text(
                                       'SIM 카드',
-                                      style: TextStyle(fontSize: 13),
+                                      style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 3,fontSize: 13),
                                     ),
                                     Text(
                                       '(Click)',
@@ -1213,7 +1216,7 @@ class _MainPageState extends State<MainPage> {
                                     ),
                                     Text(
                                       '문진표 작성',
-                                      style: TextStyle(fontSize: 13),
+                                      style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 3,fontSize: 13),
                                     ),
                                     Text(
                                       '(Click)',
@@ -1245,7 +1248,7 @@ class _MainPageState extends State<MainPage> {
                                     ),
                                     Text(
                                       '숙박하기',
-                                      style: TextStyle(fontSize: 13),
+                                      style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 3,fontSize: 13),
                                     ),
                                     Text(
                                       '(Click)',
@@ -1277,7 +1280,7 @@ class _MainPageState extends State<MainPage> {
                                     ),
                                     Text(
                                       '선불식 카드',
-                                      style: TextStyle(fontSize: 13),
+                                      style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 3,fontSize: 13),
                                     ),
                                     Text(
                                       '(Click)',
@@ -1329,7 +1332,7 @@ class _MainPageState extends State<MainPage> {
                             children: [
                               Text(
                                 'Details',
-                                style: TextStyle(color: Colors.grey[700]),
+                                style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 3,color: Colors.grey[700]),
                               ),
                               Icon(
                                 Icons.arrow_right,
@@ -1463,13 +1466,7 @@ class _MainPageState extends State<MainPage> {
                       child: Stack(
                         children: [
                           InkWell(
-                            onTap: () async {
-                              final url = ('https://www.instagram.com/yolojapan_2018/');
-
-                              if (await canLaunch(url)) {
-                                await launch(url,);
-                              }
-                            },
+                            onTap: null,
                             child: Ink.image(
                               image: NetworkImage(
                                   'https://www.yolo-japan.com/assets/images/top/sns-follow-insta.webp'),
@@ -1488,9 +1485,16 @@ class _MainPageState extends State<MainPage> {
                                     fontSize: 15, color: Colors.white)),
                                 SizedBox(height: 10,),
                                 Container(width: 130, height: 30,
-                                  color: Color.fromARGB(150, 205, 205, 205),
-                                  child: Center(child: Text('팔로우 해주세요!', style: TextStyle(color: Colors.white, fontSize: 12),
-                                  )),
+                                  decoration: BoxDecoration(
+                                    color: Color.fromARGB(150, 205, 205, 205),
+                                    border: Border.all(color: Colors.white)
+                                  ),
+                                  child: TextButton(
+                                    onPressed: () async {final instargram_YOLO = ('https://www.instagram.com/yolojapan_2018/');
+                                      if (await canLaunch(instargram_YOLO)) {await launch(instargram_YOLO,);}
+                                      },
+                                      child: Text('팔로우 해주세요!', style: TextStyle(color: Colors.white, fontSize: 9.5)),
+                                  ),
                                 )
                               ],
                             ),
@@ -1502,7 +1506,7 @@ class _MainPageState extends State<MainPage> {
                       child: Stack(
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: null,
                             child: Ink.image(
                               image: NetworkImage(
                                   'https://www.yolo-japan.com/assets/images/top/sns-follow-facebook.webp'),
@@ -1513,35 +1517,24 @@ class _MainPageState extends State<MainPage> {
                           ),
                           Center(
                             child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                FaIcon(
-                                  FontAwesomeIcons.squareFacebook,
-                                  size: 40,
-                                  color: Colors.white,
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  '@yolojapan',
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.white),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
+                              children: [SizedBox(height: 10),
+                                FaIcon(FontAwesomeIcons.squareFacebook, size: 40, color: Colors.white,),
+                                SizedBox(height: 10),
+                                Text('@yolojapan', style: TextStyle(fontSize: 15, color: Colors.white),),
+                                SizedBox(height: 10),
                                 Container(
                                   width: 130,
                                   height: 30,
-                                  color: Color.fromARGB(150, 205, 205, 205),
+                                  decoration: BoxDecoration(
+                                    color: Color.fromARGB(150, 205, 205, 205),
+                                    border: Border.all(color: Colors.white)
+                                  ),
                                   child: Center(
-                                      child: Text(
-                                    '팔로우 해주세요!',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 12),
+                                      child: TextButton(
+                                        onPressed: () async {final facebook_YOLO = ('https://www.facebook.com/yolojapan/');
+                                        if (await canLaunch(facebook_YOLO)) {await launch(facebook_YOLO,);}
+                                        },
+                                        child: Text('팔로우 해주세요!', style: TextStyle(color: Colors.white, fontSize:9.5),)
                                   )),
                                 )
                               ],
@@ -1609,10 +1602,13 @@ class _MainPageState extends State<MainPage> {
               height: 10,
             ),
             Center(
-              child: Image.asset(
-                'imag/YOLO_JP.png',
-                width: 100,
-                height: 100,
+              child: InkWell(
+                onTap: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainPage()));},
+                child: Image.asset(
+                  'imag/YOLO_JP.png',
+                  width: 100,
+                  height: 100,
+                ),
               ),
             ),
             SizedBox(

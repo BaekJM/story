@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:story/mainpage/language/how_language.dart';
+import 'package:story/mainpage/mainpage.dart';
 import 'package:story/mainpage/modul.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -8,6 +11,7 @@ class How_is_YOLO extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    How_Chage L = Get.put(How_Chage());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -43,14 +47,14 @@ class How_is_YOLO extends StatelessWidget {
                             fontSize: 17,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
-                        'YOLO에 처음 오신분에게',
+                        '${L.Text0_0}',
                       ),
                       Text(
                         style: TextStyle(
                             fontSize: 17,
                             color: Colors.orangeAccent,
                             fontWeight: FontWeight.bold),
-                        '일본에 오셨으면 우선 YOLO JAPAN에 등록',
+                        '${L.Text0_1}',
                       ),
                       SizedBox(
                         height: 10,
@@ -60,14 +64,14 @@ class How_is_YOLO extends StatelessWidget {
                             fontSize: 12,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
-                        '처음 뵙겠습니다. YOLO JAPN입니다!',
+                        '${L.Text0_2}',
                       ),
                       Text(
                         style: TextStyle(
                             fontSize: 12,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
-                        '저희는 일본에서 거주중인 외국인에게 다양한 서비스를 제공하고 있습니다.',
+                        '${L.Text0_3}',
                       ),
                       SizedBox(
                         height: 10,
@@ -77,7 +81,7 @@ class How_is_YOLO extends StatelessWidget {
                             fontSize: 12,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
-                        'YOLO JAPAN을 이용하여 일본에서 좀 더 편안하게 생활해 보아요!',
+                        '${L.Text0_4}',
                       ),
                     ],
                   ),
@@ -150,7 +154,7 @@ class How_is_YOLO extends StatelessWidget {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          '선택받은 이유1',
+                                          '${L.Text1_0}',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Colors.black,
@@ -158,7 +162,7 @@ class How_is_YOLO extends StatelessWidget {
                                         ),
                                         SizedBox(height: 5),
                                         Text(
-                                          '간단히 일자리를 찾을 수 있음',
+                                          '${L.Text1_1}',
                                           style: TextStyle(
                                               color: Colors.black, fontSize: 16),
                                         ),
@@ -179,7 +183,7 @@ class How_is_YOLO extends StatelessWidget {
                                 color: Colors.orangeAccent,
                               ),
                               Text(
-                                '6개 언어 대응! 등록에서 면접까지 일본어가 필요없습니다.',
+                                '${L.Text1_2}',
                                 style:
                                     TextStyle(fontSize: 12, color: Colors.black),
                               ),
@@ -195,7 +199,7 @@ class How_is_YOLO extends StatelessWidget {
                                 color: Colors.orangeAccent,
                               ),
                               Text(
-                                '번거로운 이력서는 필요 없습니다.',
+                                '${L.Text1_3}',
                                 style:
                                     TextStyle(fontSize: 12, color: Colors.black),
                               ),
@@ -211,7 +215,7 @@ class How_is_YOLO extends StatelessWidget {
                                 color: Colors.orangeAccent,
                               ),
                               Text(
-                                '면접 날짜는 간편한 온라인 예약으로',
+                                '${L.Text1_4}',
                                 style:
                                     TextStyle(fontSize: 12, color: Colors.black),
                               ),
@@ -238,12 +242,12 @@ class How_is_YOLO extends StatelessWidget {
                                         ),
                                         SizedBox(width: 4),
                                         Text(
-                                          '회원 등록 방법이나 면접 설정 방법 보러가기',
+                                          '${L.Text1_5}',
                                           style: TextStyle(
                                               fontSize: 10, color: Colors.black),
                                         ),
                                         Text(
-                                          '보러가기',
+                                          '${L.Text1_6}',
                                           style: TextStyle(
                                               fontSize: 10, color: Colors.blue),
                                         ),
@@ -299,8 +303,8 @@ class How_is_YOLO extends StatelessWidget {
                                           ],
                                         ),
                                       ),
-                                      child: const Text(
-                                        "일자리 찾기",
+                                      child: Text(
+                                        '${L.find}',
                                         style:
                                         TextStyle(color: Colors.white),
                                       ),
@@ -358,7 +362,7 @@ class How_is_YOLO extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '선택받은 이유2',
+                              '${L.Text2_0}',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
@@ -366,7 +370,7 @@ class How_is_YOLO extends StatelessWidget {
                             ),
                             SizedBox(height: 5),
                             Text(
-                              '남는 시간에 용돈 벌이',
+                              '${L.Text2_1}',
                               style: TextStyle(
                                   color: Colors.black, fontSize: 16),
                             ),
@@ -377,13 +381,9 @@ class How_is_YOLO extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 15,left: 30,bottom: 10),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text('YOLO JAPAN 에는 단시간 · 단발로 용돈 벌이가 가능한 일자리도 가득!',style: TextStyle(fontSize: 10,color: Colors.grey[800]),),
-                      ],
-                    ),
+                  padding: const EdgeInsets.only(top: 15,left: 30,bottom: 10,right: 20),
+                  child:Container(child: Text('${L.Text2_2}',style: TextStyle(fontSize: 10,color: Colors.grey[800]),)),
+
                 ),
 
                 SizedBox(height:20),
@@ -402,7 +402,7 @@ class How_is_YOLO extends StatelessWidget {
                             children: [
                               Image.network('https://www.yolo-japan.com/assets/about/images/reasons2-1.png',width: 80,),
                               SizedBox(height: 10),
-                              Text('앙케이트',style: TextStyle(fontSize: 10,color: Colors.grey[800]),)
+                              Text('${L.Text2_3}',style: TextStyle(fontSize: 10,color: Colors.grey[800]),)
                             ],
                           )
                         ],
@@ -417,7 +417,7 @@ class How_is_YOLO extends StatelessWidget {
                           children: [
                             Image.network('https://www.yolo-japan.com/assets/about/images/reasons2-2.png',width: 80,),
                             SizedBox(height: 10),
-                            Text('인터뷰',style: TextStyle(fontSize: 10,color: Colors.grey[800]),)
+                            Text('${L.Text2_4}',style: TextStyle(fontSize: 10,color: Colors.grey[800]),)
                           ],
                         )
                       ],
@@ -433,7 +433,7 @@ class How_is_YOLO extends StatelessWidget {
                             children: [
                               Image.network('https://www.yolo-japan.com/assets/about/images/reasons2-3.png',width: 80,),
                               SizedBox(height: 10),
-                              Text('시식',style: TextStyle(fontSize: 10,color: Colors.grey[800]),)
+                              Text('${L.Text2_5}',style: TextStyle(fontSize: 10,color: Colors.grey[800]),)
                             ],
                           )
                         ],
@@ -444,7 +444,7 @@ class How_is_YOLO extends StatelessWidget {
 
                SizedBox(height: 30,),
 
-                Text('앙케이트나 인터뷰, 시식 등에 참가하는것 만으로도 간단하게 보수를 받을 수 있습니다.',style: TextStyle(fontSize: 9),),
+                Text('${L.Text2_6}',style: TextStyle(fontSize: 9),),
 
                 Align(
                   alignment: Alignment.centerRight,
@@ -467,8 +467,8 @@ class How_is_YOLO extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            child: const Text(
-                              "일자리 찾기",
+                            child: Text(
+                                '${L.find}',
                               style:
                               TextStyle(color: Colors.white),
                             ),
@@ -520,7 +520,7 @@ class How_is_YOLO extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '선택받은 이유3',
+                              '${L.Text3_0}',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
@@ -528,7 +528,7 @@ class How_is_YOLO extends StatelessWidget {
                             ),
                             SizedBox(height: 5),
                             Text(
-                              '충실한 라이프 서포트 서비스',
+                              '${L.Text3_1}',
                               style: TextStyle(
                                   color: Colors.black, fontSize: 16),
                             ),
@@ -542,7 +542,7 @@ class How_is_YOLO extends StatelessWidget {
                 
                 Padding(
                   padding: const EdgeInsets.only(top: 15,left: 30,bottom: 10),
-                  child: Text('일자리 뿐만 아니라 생활에 도움이 되는 다양한 서비스를 제공하고 있습니다.',style: TextStyle(fontSize: 10,color: Colors.grey[800]),),
+                  child: Text('${L.Text3_2}',style: TextStyle(fontSize: 10,color: Colors.grey[800]),),
                 ),
 
                 Padding(
@@ -553,12 +553,12 @@ class How_is_YOLO extends StatelessWidget {
                       Expanded(child: InkWell(onTap: () async {final Life_YOLO = ('https://lp.yolo-japan.com/yololife/');
                       if (await canLaunch(Life_YOLO)) {await launch(Life_YOLO,);}
                       },
-                          child: Image.network('https://www.yolo-japan.com/assets/about/images/banner/yololife_sp_ko.jpg?v202210061640')),flex: 1,),
+                          child: Image.network('${L.benner3_0}')),flex: 1,),
                       SizedBox(width:10),
                       Expanded(child: InkWell(onTap: () async {final Home_YOLO = ('https://home.yolo-japan.com/');
                       if (await canLaunch(Home_YOLO)) {await launch(Home_YOLO,);}
                       },
-                          child: Image.network('https://www.yolo-japan.com/assets/yolohome/img/banner/top_sp_ko.jpg?v202210061640')),flex: 1,),
+                          child: Image.network('${L.benner3_1}')),flex: 1,),
                     ],
                   ),
                 ),
@@ -571,12 +571,12 @@ class How_is_YOLO extends StatelessWidget {
                       Expanded(child: InkWell(onTap: () async {final Mobile_YOLO = ('https://www.yolo-japan.com/ko/mobile/service');
                       if (await canLaunch(Mobile_YOLO)) {await launch(Mobile_YOLO,);}
                       },
-                          child: Image.network('https://www.yolo-japan.com/assets/about/images/banner/banner_yolomobile_sp_ko.jpg?v202210061640')),flex: 1,),
+                          child: Image.network('${L.benner3_2}')),flex: 1,),
                       SizedBox(width:10),
                       Expanded(child: InkWell(onTap: () async {final Pill_YOLO = ('https://www.yolo-japan.com/ko/yolo-pill-online/lp/b/');
                       if (await canLaunch(Pill_YOLO)) {await launch(Pill_YOLO,);}
                       },
-                          child: Image.network('https://www.yolo-japan.com/assets/about/images/banner/yolo_pill_online_sp_ko.jpg?v202210061640')),flex: 1,),
+                          child: Image.network('${L.benner3_3}')),flex: 1,),
                     ],
                   ),
                 ),
@@ -586,7 +586,7 @@ class How_is_YOLO extends StatelessWidget {
                   child: InkWell(onTap:  () async {final Card_YOLO = ('https://www.yolo-japan.com/ko/yolocard/lp/');
                   if (await canLaunch(Card_YOLO)) {await launch(Card_YOLO,);}
                   },
-                      child: Image.network('https://www.yolo-japan.com/assets/about/images/banner/banner_yolocard_ko.jpg?v202210061640')),
+                      child: Image.network('${L.benner3_4}')),
                 ),
 
 
@@ -632,7 +632,7 @@ class How_is_YOLO extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '선택받은 이유4',
+                              '${L.Text4_0}',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
@@ -640,7 +640,7 @@ class How_is_YOLO extends StatelessWidget {
                             ),
                             SizedBox(height: 5),
                             Text(
-                              '외국인을 위한 시설 YOLO BASE를 개설',
+                              '${L.Text4_1}',
                               style: TextStyle(
                                   color: Colors.black, fontSize: 16),
                             ),
@@ -655,7 +655,7 @@ class How_is_YOLO extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text('일본 최초의 외국인을 위한 취업 교육 시설 『YOLO BASE』가 오사카에 OPEN',style: TextStyle(fontSize: 10,color: Colors.grey[800]),),
+                      Text('${L.Text4_2}',style: TextStyle(fontSize: 10,color: Colors.grey[800]),),
                     ],
                   ),
                 ),
@@ -667,19 +667,19 @@ class How_is_YOLO extends StatelessWidget {
                 
                 Padding(
                   padding: const EdgeInsets.only(top: 3,bottom: 3,left: 16,right: 16),
-                  child: Text('YOLO BASE는 「일본과 외국인이 연결되는 새로운 장소」입니다.',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
+                  child: Text('${L.Text4_3}',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 3,bottom: 3,left: 16,right: 16),
-                  child: Text('일본에 온 외국인들이 즐거운 시간 및 향후 도움이 될 시간을 보낼 수 있도록,레스토랑 · 이벤트 스페이스 · 협업 스페이스 · 호텔을 설비해 두었습니다.',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
+                  child: Text('${L.Text4_4}',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 3,bottom: 3,left: 16,right: 16),
-                  child: Text('또한 숙박 시설 안 곳곳에 100명의 아티스트가 제작한 다양한 아트가 그려져 있으며,비일상적인 공간에서 각각 원하는 시간을 보낼 수 있습니다.',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
+                  child: Text('${L.Text4_5}',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 3,bottom: 3,left: 16,right: 16),
-                  child: Text('YOLO BASE에서는 외국인을 대상으로 매일 다양한 이벤트, 스터디, 교류회가 열리고 있으며,외국인과 외국인, 일본인과 외국인으로 매일 많은 만남과 발견이 생겨나고 있습니다.',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
+                  child: Text('${L.Text4_6}',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
                 ),
                 
               ],
@@ -703,7 +703,7 @@ class How_is_YOLO extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('YOLO JAPAN에 오신 것을 환영합니다'),
+                    Text('${L.Text5_0}'),
 
                     Padding(
                       padding: const EdgeInsets.only(top: 20,bottom: 20,left: 40,right: 40),
@@ -712,28 +712,44 @@ class How_is_YOLO extends StatelessWidget {
 
                     Padding(
                       padding: const EdgeInsets.only(top: 3,bottom: 3,left: 16,right: 16),
-                      child: Text('YOLO JAPAN의 목표는 「외국인과 일본인이 공존하는 사회를 만드는」 것입니다.',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
+                      child: Text('${L.Text5_1}',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 3,bottom: 3,left: 16,right: 16),
-                      child: Text('유학이나 취업 등 여러 가지 이유로 일본에서 사는 것을 선택하는 외국인은 해마다 증가하고 있습니다.',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
+                      child: Text('${L.Text5_2}',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 3,bottom: 3,left: 16,right: 16),
-                      child: Text('일본에서 살면서 일해 주는 외국인이 있기떄문에 노동력 부족의 해소와 글로벌화하는 일본 기업이 많이 있습니다.',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
+                      child: Text('${L.Text5_3}',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 3,bottom: 3,left: 16,right: 16),
-                      child: Text('그것은 즉 일본에 사는 외국인의 생활이 풍족해지면 일본은 더욱 풍족해진다는 것입니다.',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
+                      child: Text('${L.Text5_4}',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 3,bottom: 3,left: 16,right: 16),
-                      child: Text('저희 YOLO JAPAN은 일본인도 외국인도 행복해질 수 있도록 다양한 서비스를 제공하고 있습니다.',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
+                      child: Text('${L.Text5_5}',style: TextStyle(fontSize: 9, color: Colors.grey[800]), textAlign: TextAlign.center,),
                     ),
                   ],
                 ),
               ),
             )
+          ),
+          Center(
+            child: InkWell(
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => MainPage()));
+              },
+              child: Image.asset(
+                'imag/YOLO_JP.png',
+                width: 100,
+                height: 100,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
           ),
         ],
       ),

@@ -1,12 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:story/loginpage/login_page.dart';
 import 'package:story/main.dart';
 import 'package:story/mainpage/alarmpage.dart';
 import 'package:story/mainpage/findpage.dart';
 import 'package:story/mainpage/friendpage.dart';
 import 'package:story/mainpage/how_to_use/howyolo.dart';
+import 'package:story/mainpage/language/modul_language.dart';
 import 'package:story/mainpage/mainpage.dart';
 import 'package:story/mainpage/message.dart';
 import 'package:story/mainpage/settingpage.dart';
@@ -93,6 +95,7 @@ class drawer_Setting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Modul_Chage L = Get.put(Modul_Chage());
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -184,7 +187,7 @@ class drawer_Setting extends StatelessWidget {
                               color: Colors.redAccent,
                             ),
                             Text(
-                              '응모 · 전형 상황',
+                              '${L.TopManu_0}',
                               style: TextStyle(
                                   decoration: TextDecoration.lineThrough,
                                   decorationThickness: 4,
@@ -227,7 +230,7 @@ class drawer_Setting extends StatelessWidget {
                               color: Colors.redAccent,
                             ),
                             Text(
-                              '즐겨찾기',
+                              '${L.TopManu_1}',
                               style: TextStyle(
                                   decoration: TextDecoration.lineThrough,
                                   decorationThickness: 4,
@@ -270,7 +273,7 @@ class drawer_Setting extends StatelessWidget {
                               color: Colors.redAccent,
                             ),
                             Text(
-                              '마이 페이지',
+                              '${L.TopManu_2}',
                               style: TextStyle(
                                   decoration: TextDecoration.lineThrough,
                                   decorationThickness: 4,
@@ -306,7 +309,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  'YOLO에 처음 오신분들에게',
+                  '${L.menu_0}',
                   style: TextStyle(
                     fontSize: 12,
                   ),
@@ -314,7 +317,7 @@ class drawer_Setting extends StatelessWidget {
               ],
             ),
             onTap: () {
-              Navigator.pushReplacement(context,
+              Navigator.push(context,
                   MaterialPageRoute(builder: (context) => How_is_YOLO()));
             },
           ),
@@ -330,7 +333,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '아르바이트',
+                  '${L.menu_1}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -360,7 +363,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '풀 타임',
+                  '${L.menu_2}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -397,7 +400,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '모니터',
+                  '${L.menu_3}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -434,7 +437,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '픽업 특집',
+                  '${L.menu_4}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -471,7 +474,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '후불 카드',
+                  '${L.menu_5}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -507,7 +510,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '임대 물건',
+                  '${L.menu_6}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -543,7 +546,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  'SIM 카드',
+                  '${L.menu_7}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -580,7 +583,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '온라인 경구 피임약 처방',
+                  '${L.menu_8}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -616,7 +619,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '문지표',
+                  '${L.menu_9}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -653,7 +656,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '재류 자격 변경 / 갱신 대행 서비스',
+                  '${L.menu_10}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -690,7 +693,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '중고 가전제품',
+                  '${L.menu_11}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -727,7 +730,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '베트남 식품',
+                  '${L.menu_12}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -756,7 +759,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '알림',
+                  '${L.menu_13}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -785,7 +788,7 @@ class drawer_Setting extends StatelessWidget {
                   width: 6,
                 ),
                 Text(
-                  '자주 묻는 질문',
+                  '${L.menu_14}',
                   style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 3,
@@ -807,6 +810,7 @@ class drawer_Setting extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   FirebaseAuth.instance.signOut();
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyApp()));
                 },
                 child: Row(
                   children: [

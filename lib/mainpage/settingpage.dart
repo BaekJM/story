@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:story/main.dart';
 import 'package:story/mainpage/alarmpage.dart';
+import 'package:story/mainpage/language/how_language.dart';
+import 'package:story/mainpage/language/modul_language.dart';
 import 'package:story/mainpage/modul.dart';
 
-import 'language/kr_language.dart';
+import 'language/main_language.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -16,31 +18,36 @@ class SettingPage extends StatefulWidget {
 class _SettingPageState extends State<SettingPage> {
 
   void Language_Alarm() {
-    Language_Chage SW = Get.put(Language_Chage());
+
     if(language == 'KOREA'){
-      language_Contert = '정말 바꾸시겠습니까?';
-      language_Tilte = '알림';
+      language_Alarm = '알림';
+      language_Tilte = '한국어로 변경하겠습니까?';
     }else{
-      language_Contert = 'アラーム';
+      language_Alarm = 'アラーム';
       language_Tilte = '日本語に変更しますか？';
     }
 
+    Language_Chage language_Chage = Get.put(Language_Chage());
+    Modul_Chage Modul_chage = Get.put(Modul_Chage());
+    How_Chage How_chage = Get.put(How_Chage());
+
     void Chois_end(){
       if(language == 'KOREA'){
-        SW.Kr();
+        language_Chage.Kr();
       }else{
-        SW.Jp();
+        language_Chage.Jp();
       }
-      SW.language_Change();
+      language_Chage.language_Change();
+      Modul_chage.language_Change();
+      How_chage.language_Change();
+
     }
 
-    showDialog(
-        context: context,
-        builder: (context) {
+    showDialog(context: context, builder: (context) {
           return AlertDialog(
             backgroundColor: Colors.brown[100],
-            title: Text('${language_Tilte}'),
-            content: Text('${language_Contert}'),
+            title: Text('${language_Alarm}'),
+            content: Text('${language_Tilte}'),
             actions: [
               MaterialButton(onPressed: (){
                 setState(() {
@@ -61,8 +68,8 @@ class _SettingPageState extends State<SettingPage> {
 
 
   String language = '';
-  String language_Tilte = '알림';
-  String language_Contert = '정말 바꾸시겠습니까?';
+  String language_Tilte = '';
+  String language_Alarm = '';
   
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:marquee/marquee.dart';
 import 'package:story/mainpage/how_to_use/howyolo.dart';
 import 'Package:flutter_swiper/flutter_swiper.dart';
 
-import 'package:story/mainpage/language/kr_language.dart';
+import 'package:story/mainpage/language/main_language.dart';
 
 import 'package:story/loginpage/login_page.dart';
 import 'package:story/mainpage/modul.dart';

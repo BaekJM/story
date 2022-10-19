@@ -70,15 +70,12 @@ class Language_Chage extends GetxController{
   String howyolo_4 = '또한, 일본에서 처음으로 외국인 대상 취업 트레이닝 시설[YOLOBASE]를 운영하고 있습니다.';
 
 
-  ////////////
-  double s = 0;
-
-
 
   //////////////////////////////////////
-  String language = 'Kr';
+
   void Kr(){language = 'Kr';}
   void Jp(){language = 'Jp';}
+  String language = 'Kr';
   //////////////////////////////////////
   void language_Change(){
     if(language=='Kr'){

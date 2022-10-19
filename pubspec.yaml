@@ -39,14 +39,16 @@ dependencies:
   firebase_core: ^1.19.1
   cloud_firestore: ^3.4.3
   firebase_storage: ^10.3.4
-  google_sign_in: ^5.4.1
+  google_sign_in: ^5.4.2 #구글 로그인
 
   flutter_chat_bubble: ^2.0.0
 
-  flutter_swiper: ^1.1.6
+  flutter_swiper: ^1.1.0
   marquee: ^2.2.3 #text 슬라이드기능
   font_awesome_flutter: ^10.2.1 #추가 아이콘
   url_launcher: ^6.0.16 #url불로오는 기능
+
+  get:
 
 
 dev_dependencies:

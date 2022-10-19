@@ -9,25 +9,21 @@ class AlarmPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.cyanAccent,
-        automaticallyImplyLeading : false,
-        title: Text('Connet',style: TextStyle(fontSize: 30,color: Colors.black),),
-        actions: [
-          IconButton(
-            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => AlarmPage()));},
-            icon: Icon(Icons.connecting_airports),
-          ),
-          IconButton(
-            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingPage()));},
-            icon: Icon(Icons.settings),
-          ),
-        ],
+        backgroundColor: Colors.white,
+        title: appbar_Setting(),
+        iconTheme: IconThemeData(
+          size: 30,
+          color: Colors.grey[600],
+        ),
+        elevation: 0,
       ),
+      endDrawer: drawer_Setting(),
+      bottomNavigationBar: ChoisBar(),
       body: Center(
           child: Text('Alarm Page')
       ),
-      bottomNavigationBar: ChoisBar(),
     );
   }
 }

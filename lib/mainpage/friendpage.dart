@@ -25,7 +25,7 @@ class FriendPage extends StatelessWidget {
       ),
       endDrawer: drawer_Setting(),
       body: Center(
-          child: Text('마이페이지Page')
+          child: Text('My Page')
       ),
       bottomNavigationBar: ChoisBar(),
     );

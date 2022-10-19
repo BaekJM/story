@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:story/loginpage/register.dart';
 import 'package:story/mainpage/mainpage.dart';
 
 
@@ -12,7 +14,27 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
+///////////////////////////////////////////////////////////////////////////////////
+Future<UserCredential> signInWithGoogle() async {
+  // Trigger the authentication flow
+  final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+  // Obtain the auth details from the request
+  final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+  // Create a new credential
+  final credential = GoogleAuthProvider.credential(
+    accessToken: googleAuth?.accessToken,
+    idToken: googleAuth?.idToken,
+  );
+
+  // Once signed in, return the UserCredential
+  return await FirebaseAuth.instance.signInWithCredential(credential);
+}
+///////////////////////////////////////////////////////////////////////////////////
+
 class _LoginPageState extends State<LoginPage> {
+
 
   static Future<User?> loginUsingEmailPassword(
       {required String email,
@@ -55,13 +77,14 @@ class _LoginPageState extends State<LoginPage> {
 
                   SizedBox(height: 10,),
 
-                  Text('로그인 페이지 추가 사항 작성란',
+                  Text('Project : 2022.10.08 ~2022.10.19',
                 style: TextStyle(
-                    fontSize: 20
+                    fontSize: 15
                 )
             ),
 
-              SizedBox(height: 50,),
+
+              SizedBox(height: 60,),
 
               // Email Textfield
               Padding(
@@ -117,10 +140,18 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: RawMaterialButton(
                   child: Container(
-                    padding: const EdgeInsets.all(25),
+                    padding: const EdgeInsets.only(top: 20,bottom: 20,left: 30,right: 30),
                     decoration: BoxDecoration(
                         color: Colors.brown[400],
-                    borderRadius: BorderRadius.circular(12)),
+                    borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 2,
+                          offset: Offset(0, 2), // changes position of shadow
+                        ),
+                      ],),
                     child: Center(
                       child: const Text(
                           'Sign In',
@@ -137,33 +168,75 @@ class _LoginPageState extends State<LoginPage> {
                         password: _passwordController.text,
                         BuildContext: BuildContext);
                     print(user);
-                    if(user == null){
-                      Navigator.pushReplacement(context, MaterialPageRoute(
-                    builder: (BuildContext conte) => MainPage()));
-                    }
-                    else{
-                      Text('없는 사용자입니다');
+                    if(user != null){
+                     MainPage();
                     }
                   },
                 ),
               ),
-              SizedBox(height: 25,),
+              SizedBox(height: 10,),
 
-              // not a member? register now
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Not a member?',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: RawMaterialButton(
+                      child: Container(
+                        padding: const EdgeInsets.only(top: 15,bottom: 15,left: 30,right: 30),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 2,
+                              offset: Offset(0, 2), // changes position of shadow
+                            ),
+                          ],
+                        ),
+
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset('imag/icons8-구글-로고-480.png',height: 18,),
+                              SizedBox(width: 5,),
+                              const Text(
+                                  'Sign in with Google',
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18)
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      onPressed: signInWithGoogle,
+                    ),
                   ),
-                  Text('Register now',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold),
+
+                  SizedBox(height: 25,),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Not a member?',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold),
+                      ),
+                      TextButton(
+                        onPressed: (){
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Register_Now()));
+                        },
+                        child: Text('Register now',
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              )
+
             ]
             ),
           )

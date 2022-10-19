@@ -17,15 +17,6 @@ class MessagePage extends StatefulWidget {
 }
 
 class _MessagePageState extends State<MessagePage> {
-  static List<String> Test = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-  ];
-
-  //final String message;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +35,9 @@ class _MessagePageState extends State<MessagePage> {
         elevation: 0,
       ),
       endDrawer: drawer_Setting(),
-      body: Text('즐겨찾기'),
+      body: Center(
+          child: Text('Bookmark')
+      ),
       bottomNavigationBar: ChoisBar(),
     );
   }
